@@ -51,7 +51,7 @@ namespace Infrastraction.Services
 
                         if (cancellationToken.IsCancellationRequested)
                         {
-                            throw new Exception("Cansel operation");
+                            throw new Exception("Cancel operation");
                         }
                     }
                     // Commit the transaction
@@ -65,7 +65,7 @@ namespace Infrastraction.Services
             }
         }
 
-        public Task InsertRnadomUserAsync(int count)
+        public Task InsertRandomUserAsync(int count)
         {
             return Task.Run(() => InsertRandomUser(count));
         }
@@ -80,12 +80,12 @@ namespace Infrastraction.Services
         public void InsertDapperRandomUser(int count)
         {
             var faker = new Faker<UserEntity>("uk")
-                .RuleFor(u => u.LastName, f => f.Person.LastName) // Random lastname
+                .RuleFor(u => u.LastName, f => f.Person.LastName)
                 .RuleFor(u => u.FistName, f => f.Person.FirstName)
                 .RuleFor(u => u.Email, f => f.Person.Email)
                 .RuleFor(u => u.PhoneNumber, f => f.Person.Phone);
 
-            var users = faker.Generate(count); // Generate 20 dummy users
+            var users = faker.Generate(count);
             int i = 0;
             try
             {

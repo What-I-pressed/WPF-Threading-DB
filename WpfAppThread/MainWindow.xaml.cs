@@ -57,7 +57,7 @@ namespace WpfAppThread
             stopWatch.Start();
 
             //виходимо із методу у вториний потік, але запамятовуємо точну повернення.
-            await userService.InsertRnadomUserAsync((int)count);
+            await userService.InsertRandomUserAsync((int)count);
             //повертаємося, яколи асихнроний метод відпрацював.
 
             stopWatch.Stop();
