@@ -9,6 +9,7 @@ using Dapper;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using System.Transactions;
 
+
 namespace Infrastraction.Services
 {
     public class UserService
@@ -64,6 +65,8 @@ namespace Infrastraction.Services
                 }
             }
         }
+
+        
 
         public Task InsertRandomUserAsync(int count)
         {

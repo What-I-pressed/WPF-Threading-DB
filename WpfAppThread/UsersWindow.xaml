@@ -8,11 +8,11 @@
         Title="UsersWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <DockPanel Margin="10">
         <StackPanel DockPanel.Dock="Right" Margin="10,0,0,0" Width="150">
-            <Button Name="btnAdd" Content="Додати"/>
+            <Button Name="btnAdd" Content="Додати" Click="btnAdd_Click"/>
+            <Label Name ="lblUsersNumber" Content="Number of users to add"/>
+            <TextBox Name ="txtUsersNumber" TextWrapping="Wrap" Text="20" Width="120"/>
+            <ProgressBar x:Name ="pbUsersDownloaded" Height="20" Width="140"/>
         </StackPanel>
-        <DataGrid Name="dgSimple">
-            
-            
-        </DataGrid>
+        <DataGrid Name="dgSimple" GotFocus="dgSimple_GotFocus"/>
     </DockPanel>
 </Window>
